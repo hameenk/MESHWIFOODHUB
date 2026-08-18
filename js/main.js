@@ -516,6 +516,18 @@
     });
   }
 
+  /* ---------- Announcement close behavior ---------- */
+  function initAnnouncement() {
+    document.querySelectorAll(".announcement").forEach((bar) => {
+      const closeBtn = bar.querySelector(".announcement__close");
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+          bar.style.display = "none";
+        });
+      }
+    });
+  }
+
   /* ---------- Init ---------- */
   document.addEventListener("DOMContentLoaded", () => {
     hydrateConfig();
@@ -531,5 +543,6 @@
     renderInstagram();
     initReservationForm();
     initNewsletter();
+    initAnnouncement();
   });
 })();
