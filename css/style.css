@@ -2137,3 +2137,333 @@ button.info-card:hover {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
 }
+
+/* =========================================================
+   MOBILE UI OPTIMIZATIONS (< 768px)
+   - Center aligned fonts, text, titles, eyebrows, and cards on mobile
+   - Mobile hero uses generated image (assets/home-hero.png)
+   - Desktop hero uses original image (assets/hero-mandi.png)
+   - Optimized 2x2 grid layouts for quick info & features
+   - Horizontal touch scrolling for menu category pills
+   - Full-width touch-friendly CTA buttons & touch targets
+   - Responsive typography & mobile container padding
+   ========================================================= */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  /* Text & Heading Center Alignment for Mobile */
+  .section-head,
+  .section-head.center {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+    max-width: 100%;
+  }
+
+  .section-head .subhead,
+  .section-head.center .subhead,
+  .subhead {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.95rem;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  .eyebrow {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Hero Mobile Styling - Uses new home-hero.png image */
+  .hero {
+    min-height: calc(100vh - 54px);
+    display: flex;
+    align-items: flex-end;
+    background:
+      linear-gradient(180deg, rgba(18, 18, 18, .25) 0%, rgba(18, 18, 18, .55) 45%, rgba(18, 18, 18, .92) 100%),
+      radial-gradient(120% 120% at 15% 0%, rgba(75, 46, 34, .4), transparent 60%),
+      url('../assets/home-hero.png') no-repeat center center / cover;
+  }
+
+  .hero__inner {
+    padding: 80px 0 44px;
+  }
+
+  .hero__content {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 7.8vw, 2.9rem);
+    line-height: 1.12;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+    text-align: center;
+  }
+
+  .hero p.lead {
+    font-size: 0.96rem;
+    line-height: 1.5;
+    margin-bottom: 22px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__ctas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .hero__ctas .btn {
+    width: 100%;
+    min-height: 48px;
+    font-size: 0.95rem;
+  }
+
+  .hero__call {
+    justify-content: center;
+    padding: 8px 0;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .rating-card {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 16px;
+    background: rgba(18, 18, 18, 0.72);
+    backdrop-filter: blur(10px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Quick Info Strip Mobile Layout */
+  .info-strip {
+    margin-top: -36px;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .info-card {
+    padding: 14px 12px;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: var(--radius-md);
+  }
+
+  .info-card__icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .info-card h4 {
+    font-size: 0.88rem;
+    margin-bottom: 2px;
+    text-align: center;
+  }
+
+  .info-card p {
+    font-size: 0.76rem;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  /* Menu Preview Category Tabs */
+  .menu-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 8px;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .menu-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu-tab {
+    flex: none;
+    white-space: nowrap;
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+
+  /* Feature Grid Layout */
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .feature-card {
+    padding: 16px 14px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .feature-card__icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+
+  .feature-card h3 {
+    font-size: 0.98rem;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+
+  .feature-card p {
+    font-size: 0.78rem;
+    line-height: 1.38;
+    text-align: center;
+  }
+
+  /* Dish Cards on Mobile */
+  .dish-card__body {
+    padding: 16px;
+    text-align: center;
+  }
+
+  .dish-card__body h3 {
+    font-size: 1.15rem;
+    text-align: center;
+  }
+
+  .dish-card__body p {
+    font-size: 0.84rem;
+    text-align: center;
+  }
+
+  /* Menu Row on Mobile */
+  .menu-row {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .menu-row__media {
+    width: 72px;
+    height: 72px;
+  }
+
+  .menu-row__top h4 {
+    font-size: 0.98rem;
+  }
+
+  /* Story / Ambience section */
+  .story__content {
+    padding: 28px 20px;
+    text-align: center;
+  }
+
+  .story__tags {
+    justify-content: center;
+  }
+
+  .story__ctas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .story__ctas .btn {
+    width: 100%;
+  }
+
+  /* Reviews Section Mobile */
+  .review-summary {
+    padding: 14px 18px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .review-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .review-actions .btn {
+    width: 100%;
+  }
+
+  /* Order Panel */
+  .order-panel {
+    padding: 28px 18px;
+    border-radius: var(--radius-lg);
+    text-align: center;
+  }
+
+  .order-btns {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .order-btns .btn {
+    grid-column: auto !important;
+    width: 100%;
+  }
+
+  /* Location Card & Actions */
+  .location-card {
+    padding: 18px 14px;
+    text-align: center;
+  }
+
+  .contact-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .contact-actions .btn {
+    width: 100%;
+  }
+
+  /* Form inputs for Mobile Touch */
+  .form-card {
+    padding: 20px 16px;
+    text-align: center;
+  }
+
+  .form-card input,
+  .form-card select,
+  .form-card textarea {
+    font-size: 16px !important;
+    padding: 12px 14px;
+    min-height: 48px;
+    text-align: center;
+  }
+}
